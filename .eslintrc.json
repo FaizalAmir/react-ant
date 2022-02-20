@@ -1,0 +1,84 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": [
+        "airbnb",
+        "prettier",
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended"
+    ],
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 12,
+        "sourceType": "module"
+    },
+    "settings": {
+        "import/resolver": {
+            "node": {
+                "extensions": [".js", ".jsx", ".ts", ".tsx"]
+            }
+        }
+    },
+    "plugins": ["react", "prettier"],
+    "rules": {
+        /* LIST OF RULES
+      https://eslint.org/docs/rules/
+      https://www.npmjs.com/package/eslint-plugin-react
+      https://www.npmjs.com/package/eslint-plugin-import
+      https://prettier.io/docs/en/options.html
+      */
+        "import/no-extraneous-dependencies": "off", // set rules to "off" or 0 to turn the rule off https://eslint.org/docs/user-guide/configuring/rules
+        "react/jsx-filename-extension": [
+            1,
+            {
+                "extensions": [".js", ".jsx", ".tsx", ".ts"]
+            }
+        ],
+        "react/function-component-definition": [
+            2,
+            {
+                "namedComponents": ["function-declaration", "function-expression", "arrow-function"]
+            }
+        ],
+        "func-style": ["error", "declaration", { "allowArrowFunctions": true }],
+        "react/jsx-indent": "off",
+        "react/display-name": "off",
+        "jsx-a11y/label-has-associated-control": "off",
+        "no-nested-ternary": "off",
+        "no-use-before-define": "off",
+        "@typescript-eslint/no-explicit-any": "off",
+        "func-names": "off",
+        "indent": "off",
+        "linebreak-style": "off",
+        "no-plusplus": "off",
+        "no-console": ["error", { "allow": ["log", "warn", "error"] }],
+        "camelcase": "off",
+        "react/prop-types": "off",
+        "max-len": "off",
+        "quotes": "off",
+        "comma-dangle": "off",
+        "prettier/prettier": "off",
+        "react/jsx-pascal-case": "off",
+        "arrow-body-style": "off",
+        "no-underscore-dangle": "off",
+        "prefer-destructuring": "off",
+        "radix": "off",
+        "react/jsx-props-no-spreading": "off",
+        "import/extensions": [
+            "error",
+            "ignorePackages",
+            {
+                "js": "never",
+                "jsx": "never",
+                "ts": "never",
+                "tsx": "never"
+            }
+        ]
+    }
+}

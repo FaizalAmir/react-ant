@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router";
 import {
   Row,
   Col,
@@ -12,13 +13,15 @@ import {
   Select,
   message,
 } from "antd";
+
 import axios from "axios";
-import { useNavigate } from "react-router";
+
 const { Title } = Typography;
 const layout = {
   labelCol: { span: 8 },
   wrapperCol: { span: 16 },
 };
+
 const FormApp = () => {
   const [loading, setLoading] = useState(false);
   const history = useNavigate();
@@ -37,7 +40,7 @@ const FormApp = () => {
       });
   };
   return (
-    <div>
+    <>
       <Row gutter={[40, 0]}>
         <Col span={23}>
           <Title style={{ textAlign: "center" }} level={2}>
@@ -133,7 +136,7 @@ const FormApp = () => {
           </Form>
         </Col>
       </Row>
-    </div>
+    </>
   );
 };
 export default FormApp;

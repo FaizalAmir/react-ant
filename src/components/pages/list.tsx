@@ -42,7 +42,7 @@ const List = () => {
       username: user.username,
       email: user.email,
       gender: user.gender,
-      review: user.review + "%",
+      review: `${user.review} %`,
     });
     return data;
   });
@@ -50,7 +50,7 @@ const List = () => {
     history("/form");
   };
   return (
-    <div>
+    <>
       <Row gutter={[40, 0]}>
         <Col span={18}>
           <Title level={2}>User List</Title>
@@ -66,7 +66,7 @@ const List = () => {
           <Table columns={columns} dataSource={data} />
         </Col>
       </Row>
-    </div>
+    </>
   );
 };
 export default List;
