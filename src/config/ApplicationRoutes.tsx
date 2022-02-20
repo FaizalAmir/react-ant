@@ -4,7 +4,7 @@ import {
     BrowserRouter,
     Route,
     Routes,
-    Navigate,
+    // Navigate,
 } from "react-router-dom";
 import { Layout } from "antd";
 import {
@@ -21,7 +21,7 @@ import SideNav from "../components/layouts/sidebar";
 /* === Lebih baik gunain React lazy dan di usahain penamaan pages jangan sama kaya nama component di antd === */
 const List = React.lazy(() => import('../components/pages/list'))
 const Form = React.lazy(() => import('../components/pages/form'))
-const File = React.lazy(() => import('../components/pages/list'))
+const File = React.lazy(() => import('../components/pages/files'))
 const Videos = React.lazy(() => import('../components/pages/videos'))
 
 const { Header, Sider, Content } = Layout;
@@ -69,32 +69,38 @@ const ApplicationRoutes = () => {
                             */}
 
                             {/* Kalau Pake React Lazy  */}
+                            <Route path="*"
+                                element={
+                                    <React.Suspense fallback="Loading...">
+                                        <List />
+                                    </React.Suspense>
+                                } />
                             <Route path="list"
                                 element={
                                     <React.Suspense fallback="Loading...">
                                         <List />
                                     </React.Suspense>
                                 } />
-                                <Route path="form"
-                                    element={
-                                        <React.Suspense fallback="Loading...">
-                                            <Form />
-                                        </React.Suspense>
-                                    } />
-                                    <Route path="files"
-                                        element={
-                                            <React.Suspense fallback="Loading...">
-                                                <File />
-                                            </React.Suspense>
-                                        } />
-                                        <Route path="videos"
-                                            element={
-                                                <React.Suspense fallback="Loading...">
-                                                    <Videos />
-                                                </React.Suspense>
-                                            } />
+                            <Route path="form"
+                                element={
+                                    <React.Suspense fallback="Loading...">
+                                        <Form />
+                                    </React.Suspense>
+                                } />
+                            <Route path="files"
+                                element={
+                                    <React.Suspense fallback="Loading...">
+                                        <File />
+                                    </React.Suspense>
+                                } />
+                            <Route path="videos"
+                                element={
+                                    <React.Suspense fallback="Loading...">
+                                        <Videos />
+                                    </React.Suspense>
+                                } />
                         </Routes>
-                        <Navigate to="list" />
+                        {/* <Navigate to="list" /> */}
 
                     </Content>
                 </Layout>
